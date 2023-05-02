@@ -1,0 +1,23 @@
+body {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: grey 2px solid;
+  width: 500px;
+  height: 40vh;
+}
+.other-info {
+  display: flex;
+}
+.forecast {
+  justify-items: flex-end;
+  display: flex;
+  border: grey 2px solid;
+  height: 300px;
+}
