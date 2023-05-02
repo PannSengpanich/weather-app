@@ -1,23 +1,119 @@
+@font-face {
+  font-family: "Merriweather Sans";
+  src: url("./font/Merriweather_Sans/MerriweatherSans-VariableFont_wght.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Exo";
+  src: url("./font/Exo/Exo-VariableFont_wght.ttf") format("truetype");
+}
+html {
+  display: flex;
+  justify-content: center;
+}
 body {
+  gap: 30px;
+  background-image: url("./image/fantasy-landscape-dk.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: "Exo", sans-serif;
+  justify-content: space-between;
   height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .current {
+  margin-top: 100px;
+  border-radius: 40px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: grey 2px solid;
   width: 500px;
-  height: 40vh;
+  height: 400px;
+}
+
+input {
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #fff;
+  width: 200px;
+}
+.city {
+  font-size: 1.5rem;
+}
+.currentTemp {
+  font-size: 6rem;
+}
+.condition {
+  font-size: 1.5rem;
 }
 .other-info {
+  width: 100%;
   display: flex;
+  justify-content: space-evenly;
 }
 .forecast {
+  width: 90vw;
+  overflow-x: scroll;
   justify-items: flex-end;
   display: flex;
-  border: grey 2px solid;
-  height: 300px;
+  height: 250px;
+}
+.day {
+  opacity: 0.8;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 300px;
+  flex-shrink: 0;
+}
+.day:hover {
+  opacity: 1;
+}
+.fcTemp {
+  align-items: center;
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+}
+.fcMaxTemp {
+  color: red;
+  padding: 0;
+  font-size: 2rem;
+}
+.fcMinTemp {
+  font-size: 1.2rem;
+  color: greenyellow;
+}
+
+.forecast::-webkit-scrollbar {
+  width: 1px;
+  height: 8px;
+  opacity: 0.5;
+}
+
+.forecast::-webkit-scrollbar-track {
+  background: none;
+}
+
+.forecast::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+.forecast::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    width: 300px;
+  }
 }
