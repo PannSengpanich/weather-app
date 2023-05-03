@@ -4,3 +4,4 @@ The Weather App project is a web development project included in The Odin Projec
 
 The goal of the project is to build a fully functional weather application that fetches data from the [weather api](https://www.weatherapi.com/) and displays it to the user in a readable format. This project will help developers to practice their JavaScript programming skills, understand how to make HTTP requests using fetch, and manipulate the DOM using JavaScript.
 
+https://pannsengpanich.github.io/weather-app
