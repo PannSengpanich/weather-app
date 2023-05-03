@@ -41,6 +41,7 @@ function convertDate(date) {
 }
 async function updateWeather() {
   try {
+    body.style.opacity = "0";
     let cityName = input.value;
     if (cityName === "") {
       cityName = "Bangkok"; // Set default city to Bangkok
@@ -90,3 +91,6 @@ async function updateWeather() {
 }
 
 updateWeather();
+window.onload = function () {
+  document.body.style.opacity = "1";
+};

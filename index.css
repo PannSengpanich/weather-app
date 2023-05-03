@@ -23,6 +23,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 .current {
   background-color: rgba(0.627, 0.627, 0.627, 0.2);
