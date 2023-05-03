@@ -2,6 +2,7 @@ const input = document.querySelector("input");
 input.addEventListener("keypress", function (event) {
   if (event.keyCode === 13) {
     updateWeather();
+    document.body.style.opacity = "1";
     input.value = "";
   }
 });
