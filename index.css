@@ -25,7 +25,8 @@ body {
   align-items: center;
 }
 .current {
-  margin-top: 100px;
+  background-color: rgba(0.627, 0.627, 0.627, 0.2);
+  margin-top: 70px;
   border-radius: 40px;
   gap: 10px;
   display: flex;
@@ -36,6 +37,7 @@ body {
 }
 
 input {
+  margin-top: 30px;
   border-radius: 30px;
   border: none;
   padding: 10px;
@@ -76,6 +78,10 @@ input {
 }
 .day:hover {
   opacity: 1;
+  background-color: rgba(0.627, 0.627, 0.627, 0.5);
+}
+img {
+  width: 70px;
 }
 .fcTemp {
   align-items: center;
@@ -86,10 +92,10 @@ input {
 .fcMaxTemp {
   color: red;
   padding: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .fcMinTemp {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: greenyellow;
 }
 

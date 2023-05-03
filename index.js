@@ -21,7 +21,7 @@ async function getData(cityName) {
     const now = new Date();
     const hour = now.getUTCHours();
     const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=ed8b33aec1e74b0b964150809230105&q=${cityName}&days=7&hour=${hour}`,
+      `https://api.weatherapi.com/v1/forecast.json?key=ed8b33aec1e74b0b964150809230105&q=${cityName}&days=7&hour=${hour}`
     );
     if (!response.ok) {
       throw new Error();
@@ -32,7 +32,13 @@ async function getData(cityName) {
     throw new Error("City was not found");
   }
 }
-
+function convertDate(date) {
+  let newDate = new Date(date);
+  let month = newDate.toString().split(" ")[1];
+  let day = newDate.toString().split(" ")[2];
+  let formattedDate = month + " " + day;
+  return formattedDate;
+}
 async function updateWeather() {
   try {
     let cityName = input.value;
@@ -50,6 +56,7 @@ async function updateWeather() {
     days.forEach((day, index) => {
       day.innerHTML = "";
       const fcDate = document.createElement("div");
+      const icon = document.createElement("img");
       const fcTemp = document.createElement("div");
       const fcMaxTemp = document.createElement("div");
       const fcMinTemp = document.createElement("div");
@@ -60,14 +67,18 @@ async function updateWeather() {
       fcMaxTemp.classList.add("fcMaxTemp");
       fcMinTemp.classList.add("fcMinTemp");
       fcCondition.classList.add("fcCondition");
-      fcDate.innerHTML = data.forecast.forecastday[index].date;
+      let date = convertDate(data.forecast.forecastday[index].date);
+      fcDate.innerHTML = date;
+      icon.src = data.forecast.forecastday[index].day.condition.icon;
       fcMaxTemp.innerHTML =
         data.forecast.forecastday[index].day.maxtemp_c + " °C";
       fcMinTemp.innerHTML =
         data.forecast.forecastday[index].day.mintemp_c + " °C";
       fcCondition.innerHTML =
         data.forecast.forecastday[index].day.condition.text;
+
       day.append(fcDate);
+      day.append(icon);
       day.append(fcTemp);
       fcTemp.append(fcMaxTemp);
       fcTemp.append(fcMinTemp);
