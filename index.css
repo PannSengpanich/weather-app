@@ -56,6 +56,7 @@ input {
 }
 .condition {
   font-size: 1.5rem;
+  font-size: italic;
 }
 .other-info {
   width: 100%;
@@ -77,6 +78,7 @@ input {
   flex-direction: column;
   width: 300px;
   flex-shrink: 0;
+  justify-content: space-evenly;
 }
 .day:hover {
   opacity: 1;
@@ -84,6 +86,9 @@ input {
 }
 img {
   width: 70px;
+}
+.fcDate {
+  font-size: 1.5rem;
 }
 .fcTemp {
   align-items: center;
@@ -99,6 +104,10 @@ img {
 .fcMinTemp {
   font-size: 1.5rem;
   color: greenyellow;
+}
+.fcCondition {
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
 .forecast::-webkit-scrollbar {
@@ -121,15 +130,29 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
   body {
     width: 300px;
+    justify-content: space-evenly;
+  }
+  .current {
+    width: 400px;
+    height: 320px;
   }
   .forecast {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 400px;
   }
   .day {
     align-items: center;
+    justify-content: space-evenly;
+    height: 150px;
+  }
+  .fcCondition {
+    font-size: 1.3rem;
   }
 }

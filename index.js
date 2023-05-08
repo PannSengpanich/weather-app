@@ -22,7 +22,7 @@ async function getData(cityName) {
     const now = new Date();
     const hour = now.getUTCHours();
     const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=ed8b33aec1e74b0b964150809230105&q=${cityName}&days=7&hour=${hour}`
+      `https://api.weatherapi.com/v1/forecast.json?key=ed8b33aec1e74b0b964150809230105&q=${cityName}&days=7&hour=${hour}`,
     );
     if (!response.ok) {
       throw new Error();
